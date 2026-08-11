@@ -1,0 +1,13 @@
+#!/bin/sh
+# IPTV 接口启动时, 把 EPG/IGMP 网段路由指到 IPTV 接口
+# 部署: /etc/hotplug.d/iface/25-iptv-route
+# 网段/网关参数从 /etc/iptv.conf 读取
+
+[ "$ACTION" = "ifup" ] || exit 0
+[ "$INTERFACE" = "iptv" ] || exit 0
+[ -r /etc/iptv.conf ] && . /etc/iptv.conf
+
+EDGE_NET="${IGMP_NET:-182.146.0.0/16}"
+EDGE_GW="${IGMP_GW:-10.246.64.1}"
+
+ip route replace "$EDGE_NET" via "$EDGE_GW" dev iptv metric 20
