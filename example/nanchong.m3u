@@ -1,0 +1,393 @@
+#EXTM3U x-tvg-url="http://192.168.1.1/epg.xml"
+#EXTINF:-1 tvg-id="ch17010411112850593740" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV1.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17010411112850593740.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CCTV-1高清
+http://192.168.1.1:5140/rtp/239.93.16.133:9260
+#EXTINF:-1 tvg-id="ch17020716350406789722" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV2.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17020716350406789722.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CCTV-2高清
+http://192.168.1.1:5140/rtp/239.93.16.60:8354
+#EXTINF:-1 tvg-id="ch17010316223316147312" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV3.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17010316223316147312.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CCTV-3高清
+http://192.168.1.1:5140/rtp/239.93.16.141:9320
+#EXTINF:-1 tvg-id="ch18101810562570068563" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV4.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch18101810562570068563.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CCTV-4高清
+http://192.168.1.1:5140/rtp/239.93.17.186:7728
+#EXTINF:-1 tvg-id="ch15082102044186945826" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV5.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch15082102044186945826.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CCTV-5高清
+http://192.168.1.1:5140/rtp/239.93.16.143:9332
+#EXTINF:-1 tvg-id="ch17010916353561233214" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV6.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17010916353561233214.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CCTV-6高清
+http://192.168.1.1:5140/rtp/239.93.16.144:9338
+#EXTINF:-1 tvg-id="ch17020717165732736392" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV7.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17020717165732736392.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CCTV-7高清
+http://192.168.1.1:5140/rtp/239.93.16.64:8378
+#EXTINF:-1 tvg-id="ch17010917040571062277" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV8.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17010917040571062277.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CCTV-8高清
+http://192.168.1.1:5140/rtp/239.93.16.145:9344
+#EXTINF:-1 tvg-id="ch17020717224920462830" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV9.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17020717224920462830.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CCTV-9高清
+http://192.168.1.1:5140/rtp/239.93.16.61:8360
+#EXTINF:-1 tvg-id="ch17020709591211851122" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV10.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17020709591211851122.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CCTV-10高清
+http://192.168.1.1:5140/rtp/239.93.16.65:8384
+#EXTINF:-1 tvg-id="ch19101610370108742172" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV11.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch19101610370108742172.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CCTV-11高清
+http://192.168.1.1:5140/rtp/239.93.16.129:7914
+#EXTINF:-1 tvg-id="ch17020710184121218949" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV12.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17020710184121218949.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CCTV-12高清
+http://192.168.1.1:5140/rtp/239.93.16.68:8402
+#EXTINF:-1 tvg-id="ch20030814595998870929" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV13.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20030814595998870929.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CCTV-13高清
+http://192.168.1.1:5140/rtp/239.93.17.210:8278
+#EXTINF:-1 tvg-id="ch17020715161175836127" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17020715161175836127.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CCTV-少儿高清
+http://192.168.1.1:5140/rtp/239.93.16.69:8408
+#EXTINF:-1 tvg-id="ch19101519301294586459" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV15.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch19101519301294586459.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CCTV-15高清
+http://192.168.1.1:5140/rtp/239.93.16.131:7918
+#EXTINF:-1 tvg-id="ch19081516193861955377" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV17.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch19081516193861955377.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CCTV-17高清
+http://192.168.1.1:5140/rtp/239.93.16.154:7832
+#EXTINF:-1 tvg-id="ch00000000000000000928" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV5+.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch00000000000000000928.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CCTV-5+高清
+http://192.168.1.1:5140/rtp/
+#EXTINF:-1 tvg-id="ch24011016011023061099" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CCTV.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch24011016011023061099.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CCTV-4K
+http://192.168.1.1:5140/rtp/239.93.17.16:7040
+#EXTINF:-1 tvg-id="ch21020215013576509456" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch21020215013576509456.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",爱上4K专区
+http://192.168.1.1:5140/rtp/239.93.17.252:8816
+#EXTINF:-1 tvg-id="ch21071314485319402177" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CGTN.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch21071314485319402177.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CGTN英语
+http://192.168.1.1:5140/rtp/239.93.17.206:8844
+#EXTINF:-1 tvg-id="ch14010615441182878039" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch14010615441182878039.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",精彩导视
+http://192.168.1.1:5140/rtp/239.93.16.122:8732
+#EXTINF:-1 tvg-id="ch24011809445493424881" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch24011809445493424881.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",四川卫视4K
+http://192.168.1.1:5140/rtp/239.93.17.18:7048
+#EXTINF:-1 tvg-id="ch24011710450070155849" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch24011710450070155849.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",湖南卫视4K
+http://192.168.1.1:5140/rtp/239.93.16.17:7046
+#EXTINF:-1 tvg-id="ch24011510102326623231" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch24011510102326623231.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",江苏卫视4K
+http://192.168.1.1:5140/rtp/239.93.17.17:7042
+#EXTINF:-1 tvg-id="ch22041314375777083653" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch22041314375777083653.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",浙江卫视4K
+http://192.168.1.1:5140/rtp/239.93.16.235:8090
+#EXTINF:-1 tvg-id="ch22040110394154076593" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch22040110394154076593.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",东方卫视4K
+http://192.168.1.1:5140/rtp/239.93.16.231:8046
+#EXTINF:-1 tvg-id="ch17011010533861476819" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17011010533861476819.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",北京卫视4K
+http://192.168.1.1:5140/rtp/239.93.16.111:8662
+#EXTINF:-1 tvg-id="ch24013000330047968903" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch24013000330047968903.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",深圳卫视4K
+http://192.168.1.1:5140/rtp/239.93.16.22:7068
+#EXTINF:-1 tvg-id="ch24013000321799003386" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch24013000321799003386.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",广东卫视4K
+http://192.168.1.1:5140/rtp/239.93.17.20:7058
+#EXTINF:-1 tvg-id="ch22040110395084031654" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch22040110395084031654.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",山东卫视4K
+http://192.168.1.1:5140/rtp/239.93.16.232:8052
+#EXTINF:-1 tvg-id="ch17011010045592131179" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17011010045592131179.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",四川卫视高清
+http://192.168.1.1:5140/rtp/239.93.16.107:8636
+#EXTINF:-1 tvg-id="ch17010917083594683775" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17010917083594683775.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",湖南卫视高清
+http://192.168.1.1:5140/rtp/239.93.16.193:9630
+#EXTINF:-1 tvg-id="ch17010917125301702777" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17010917125301702777.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",江苏卫视高清
+http://192.168.1.1:5140/rtp/239.93.16.194:9636
+#EXTINF:-1 tvg-id="ch17010917195110666029" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17010917195110666029.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",浙江卫视高清
+http://192.168.1.1:5140/rtp/239.93.16.215:9762
+#EXTINF:-1 tvg-id="ch17010917264359426571" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17010917264359426571.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",东方卫视高清
+http://192.168.1.1:5140/rtp/239.93.16.216:9768
+#EXTINF:-1 tvg-id="ch17010917313991214454" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17010917313991214454.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",北京卫视高清
+http://192.168.1.1:5140/rtp/239.93.16.137:9296
+#EXTINF:-1 tvg-id="ch17011009562506828181" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17011009562506828181.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",深圳卫视高清
+http://192.168.1.1:5140/rtp/239.93.16.139:9308
+#EXTINF:-1 tvg-id="ch17011010223473580351" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17011010223473580351.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",广东卫视高清
+http://192.168.1.1:5140/rtp/239.93.16.132:9254
+#EXTINF:-1 tvg-id="ch17020717492102467694" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17020717492102467694.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",天津卫视高清
+http://192.168.1.1:5140/rtp/239.93.16.125:8750
+#EXTINF:-1 tvg-id="ch17011010312603318577" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17011010312603318577.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",山东卫视高清
+http://192.168.1.1:5140/rtp/239.93.16.126:8756
+#EXTINF:-1 tvg-id="ch17020913502249316789" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/SCTV2.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17020913502249316789.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",SCTV-2高清
+http://192.168.1.1:5140/rtp/239.93.16.71:8420
+#EXTINF:-1 tvg-id="ch17020717351636209049" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/SCTV3.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17020717351636209049.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",SCTV-3高清
+http://192.168.1.1:5140/rtp/239.93.16.41:8240
+#EXTINF:-1 tvg-id="ch18091817222407682231" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/SCTV4.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch18091817222407682231.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",SCTV-4高清
+http://192.168.1.1:5140/rtp/239.93.17.179:7720
+#EXTINF:-1 tvg-id="ch17020816434691483076" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/SCTV5.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17020816434691483076.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",SCTV-5高清
+http://192.168.1.1:5140/rtp/239.93.16.188:9600
+#EXTINF:-1 tvg-id="ch19042317015223269325" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/SCTV6.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch19042317015223269325.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",SCTV-6高清
+http://192.168.1.1:5140/rtp/239.93.16.113:7824
+#EXTINF:-1 tvg-id="ch17122110472745929422" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/SCTV7.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17122110472745929422.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",SCTV-7高清
+http://192.168.1.1:5140/rtp/239.93.17.87:7348
+#EXTINF:-1 tvg-id="ch20030814594337171061" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/SCTV.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20030814594337171061.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",SCTV-科教高清
+http://192.168.1.1:5140/rtp/239.93.16.209:8274
+#EXTINF:-1 tvg-id="ch19032017224179681444" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch19032017224179681444.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",四川乡村频道高清
+http://192.168.1.1:5140/rtp/239.93.16.97:7820
+#EXTINF:-1 tvg-id="ch20032013464429610348" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20032013464429610348.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",康巴卫视高清
+http://192.168.1.1:5140/rtp/239.93.16.212:8344
+#EXTINF:-1 tvg-id="ch13042810471470147639" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch13042810471470147639.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",峨眉电影高清
+http://192.168.1.1:5140/rtp/239.93.16.116:8696
+#EXTINF:-1 tvg-id="ch18101811372192065629" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch18101811372192065629.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",江西卫视高清
+http://192.168.1.1:5140/rtp/239.93.17.214:7748
+#EXTINF:-1 tvg-id="ch18011815190079633702" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch18011815190079633702.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",东南卫视高清
+http://192.168.1.1:5140/rtp/239.93.17.89:7356
+#EXTINF:-1 tvg-id="ch17010316045516123152" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17010316045516123152.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",黑龙江卫视高清
+http://192.168.1.1:5140/rtp/239.93.16.140:9314
+#EXTINF:-1 tvg-id="ch18101814252652037681" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch18101814252652037681.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",贵州卫视高清
+http://192.168.1.1:5140/rtp/239.93.17.201:7744
+#EXTINF:-1 tvg-id="ch17011010173563020049" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17011010173563020049.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",湖北卫视高清
+http://192.168.1.1:5140/rtp/239.93.16.127:8762
+#EXTINF:-1 tvg-id="ch20030814581599709372" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20030814581599709372.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",安徽卫视高清
+http://192.168.1.1:5140/rtp/239.93.17.190:7974
+#EXTINF:-1 tvg-id="ch18101814253522459148" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch18101814253522459148.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",河北卫视高清
+http://192.168.1.1:5140/rtp/239.93.17.180:7752
+#EXTINF:-1 tvg-id="ch18112714493284190784" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch18112714493284190784.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",中国交通
+http://192.168.1.1:5140/rtp/239.93.17.174:7760
+#EXTINF:-1 tvg-id="ch20030814593304742163" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20030814593304742163.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",河南卫视高清
+http://192.168.1.1:5140/rtp/239.93.17.209:8270
+#EXTINF:-1 tvg-id="ch20030814592520094012" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20030814592520094012.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",广西卫视高清
+http://192.168.1.1:5140/rtp/239.93.17.208:8266
+#EXTINF:-1 tvg-id="ch10102618215130528475" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch10102618215130528475.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",云南卫视高清
+http://192.168.1.1:5140/rtp/239.93.16.43:8252
+#EXTINF:-1 tvg-id="ch11111620062565806259" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch11111620062565806259.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",吉林卫视高清
+http://192.168.1.1:5140/rtp/239.93.16.221:9798
+#EXTINF:-1 tvg-id="ch24050714563454217150" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch24050714563454217150.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",陕西卫视高清
+http://192.168.1.1:5140/rtp/239.93.17.185:9992
+#EXTINF:-1 tvg-id="ch10102618215187503891" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch10102618215187503891.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",山西卫视
+http://192.168.1.1:5140/rtp/239.93.16.36:8210
+#EXTINF:-1 tvg-id="ch10102618215131320811" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch10102618215131320811.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",内蒙古卫视高清
+http://192.168.1.1:5140/rtp/239.93.16.52:8306
+#EXTINF:-1 tvg-id="ch10102618215133416741" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch10102618215133416741.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",青海卫视
+http://192.168.1.1:5140/rtp/239.93.16.44:8258
+#EXTINF:-1 tvg-id="ch12121417000308255425" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch12121417000308255425.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",宁夏卫视高清
+http://192.168.1.1:5140/rtp/239.93.16.152:9386
+#EXTINF:-1 tvg-id="ch10102618215138265402" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch10102618215138265402.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",西藏卫视高清
+http://192.168.1.1:5140/rtp/239.93.16.51:8300
+#EXTINF:-1 tvg-id="ch10102618215162425533" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch10102618215162425533.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",新疆卫视高清
+http://192.168.1.1:5140/rtp/239.93.16.53:8312
+#EXTINF:-1 tvg-id="ch13052113023404330994" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch13052113023404330994.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",甘肃卫视高清
+http://192.168.1.1:5140/rtp/239.93.16.49:8288
+#EXTINF:-1 tvg-id="ch11111620062575901686" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch11111620062575901686.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",海南卫视
+http://192.168.1.1:5140/rtp/239.93.16.227:9834
+#EXTINF:-1 tvg-id="ch20030814582398751861" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20030814582398751861.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",辽宁卫视高清
+http://192.168.1.1:5140/rtp/239.93.16.191:7978
+#EXTINF:-1 tvg-id="ch19010914340020671763" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch19010914340020671763.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",兵团卫视高清
+http://192.168.1.1:5140/rtp/239.93.17.254:7796
+#EXTINF:-1 tvg-id="ch11111620062584946233" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch11111620062584946233.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",厦门卫视
+http://192.168.1.1:5140/rtp/239.93.16.242:9924
+#EXTINF:-1 tvg-id="ch10102618215132835106" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch10102618215132835106.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",三沙卫视
+http://192.168.1.1:5140/rtp/239.93.16.50:8294
+#EXTINF:-1 tvg-id="ch21061014254263165847" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch21061014254263165847.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",山东教育卫视
+http://192.168.1.1:5140/rtp/239.93.16.3:8828
+#EXTINF:-1 tvg-id="ch12090317552022699997" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch12090317552022699997.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",延边卫视
+http://192.168.1.1:5140/rtp/239.93.16.156:9410
+#EXTINF:-1 tvg-id="ch24051018241418596865" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch24051018241418596865.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",北京纪实科教高清
+http://192.168.1.1:5140/rtp/239.93.17.187:9994
+#EXTINF:-1 tvg-id="ch18103010255326345609" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch18103010255326345609.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",安多卫视
+http://192.168.1.1:5140/rtp/239.93.17.181:7756
+#EXTINF:-1 tvg-id="ch10102618215182957381" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch10102618215182957381.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",重庆卫视高清
+http://192.168.1.1:5140/rtp/239.93.16.48:8282
+#EXTINF:-1 tvg-id="ch15071611254967917329" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch15071611254967917329.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",南充综合高清
+http://192.168.1.1:5140/rtp/239.93.16.98:8582
+#EXTINF:-1 tvg-id="ch15071611195006521183" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch15071611195006521183.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",南充科教高清
+http://192.168.1.1:5140/rtp/239.93.16.79:8468
+#EXTINF:-1 tvg-id="ch18101814251925491019" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch18101814251925491019.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",金鹰纪实高清
+http://192.168.1.1:5140/rtp/239.94.3.100:7740
+#EXTINF:-1 tvg-id="ch19012116135342196877" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CETV1.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch19012116135342196877.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CETV-1 高清
+http://192.168.1.1:5140/rtp/239.93.16.8:7812
+#EXTINF:-1 tvg-id="ch16112810314429250074" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch16112810314429250074.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",熊猫新闻高清专区
+http://192.168.1.1:5140/rtp/239.93.16.99:8588
+#EXTINF:-1 tvg-id="ch13121809514861494560" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch13121809514861494560.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",熊猫体娱高清专区
+http://192.168.1.1:5140/rtp/239.93.16.109:8648
+#EXTINF:-1 tvg-id="ch16102518000473146825" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch16102518000473146825.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",熊猫少儿高清专区
+http://192.168.1.1:5140/rtp/239.93.16.178:9540
+#EXTINF:-1 tvg-id="ch13121809540636494163" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch13121809540636494163.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",熊猫影院专区
+http://192.168.1.1:5140/rtp/239.93.16.110:8654
+#EXTINF:-1 tvg-id="ch11111805393726339993" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch11111805393726339993.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",云看熊猫专区
+http://192.168.1.1:5140/rtp/239.93.16.253:9990
+#EXTINF:-1 tvg-id="ch13121616035230294548" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch13121616035230294548.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",金熊猫卡通高清专区
+http://192.168.1.1:5140/rtp/239.93.16.104:8618
+#EXTINF:-1 tvg-id="ch12051618055711302653" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch12051618055711302653.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",嘉佳卡通
+http://192.168.1.1:5140/rtp/239.93.16.158:9432
+#EXTINF:-1 tvg-id="ch16102518000471190746" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch16102518000471190746.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",熊猫爱生活高清专区
+http://192.168.1.1:5140/rtp/239.93.16.32:8186
+#EXTINF:-1 tvg-id="ch17010417364651183997" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17010417364651183997.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",大爱四川高清专区
+http://192.168.1.1:5140/rtp/239.93.16.184:9576
+#EXTINF:-1 tvg-id="ch22021511044456004496" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch22021511044456004496.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",大爱旅游高清专区
+http://192.168.1.1:5140/rtp/239.93.16.225:8016
+#EXTINF:-1 tvg-id="ch22021511045881706314" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch22021511045881706314.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",大爱生活高清专区
+http://192.168.1.1:5140/rtp/239.93.16.226:8020
+#EXTINF:-1 tvg-id="ch22021511051053843557" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch22021511051053843557.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",大爱时尚高清专区
+http://192.168.1.1:5140/rtp/239.93.16.228:8028
+#EXTINF:-1 tvg-id="ch21020811253452526973" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CETV2.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch21020811253452526973.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CETV-2
+http://192.168.1.1:5140/rtp/239.93.17.191:7982
+#EXTINF:-1 tvg-id="ch19051823200264089491" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CETV4.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch19051823200264089491.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CETV-4高清
+http://192.168.1.1:5140/rtp/239.93.16.128:7828
+#EXTINF:-1 tvg-id="ch12041016090120123868" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch12041016090120123868.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",经典电影专区
+http://192.168.1.1:5140/rtp/239.93.16.163:9444
+#EXTINF:-1 tvg-id="ch11111805305654307144" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch11111805305654307144.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",华语影院专区
+http://192.168.1.1:5140/rtp/239.93.16.205:9702
+#EXTINF:-1 tvg-id="ch11111805305686781690" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch11111805305686781690.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",星光院线专区
+http://192.168.1.1:5140/rtp/239.93.16.204:9696
+#EXTINF:-1 tvg-id="ch11111805305620276946" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch11111805305620276946.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",全球大片专区
+http://192.168.1.1:5140/rtp/239.93.16.169:9486
+#EXTINF:-1 tvg-id="ch11111620062552011208" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch11111620062552011208.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",热播剧场专区
+http://192.168.1.1:5140/rtp/239.93.16.244:9936
+#EXTINF:-1 tvg-id="ch11111805305664441805" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch11111805305664441805.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",热门剧场专区
+http://192.168.1.1:5140/rtp/239.93.16.203:9690
+#EXTINF:-1 tvg-id="ch24062016452146872789" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch24062016452146872789.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",健康养生专区
+http://192.168.1.1:5140/rtp/239.93.17.165:9974
+#EXTINF:-1 tvg-id="ch11111805305666597337" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch11111805305666597337.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",谍战剧场专区
+http://192.168.1.1:5140/rtp/239.93.16.166:9468
+#EXTINF:-1 tvg-id="ch11041514345352262688" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch11041514345352262688.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",卡酷少儿
+http://192.168.1.1:5140/rtp/239.93.16.82:8486
+#EXTINF:-1 tvg-id="ch11111620062589790832" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch11111620062589790832.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",金鹰卡通
+http://192.168.1.1:5140/rtp/239.93.16.218:9780
+#EXTINF:-1 tvg-id="ch13121616074211073818" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch13121616074211073818.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",优漫卡通
+http://192.168.1.1:5140/rtp/239.93.16.105:8624
+#EXTINF:-1 tvg-id="ch11111805305608293247" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch11111805305608293247.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",宝宝动画高清专区
+http://192.168.1.1:5140/rtp/239.93.16.196:9648
+#EXTINF:-1 tvg-id="ch12050811570100820630" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch12050811570100820630.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",少儿动画高清专区
+http://192.168.1.1:5140/rtp/239.93.16.161:9456
+#EXTINF:-1 tvg-id="ch11111805305675909188" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch11111805305675909188.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",青春动漫专区
+http://192.168.1.1:5140/rtp/239.93.16.197:9654
+#EXTINF:-1 tvg-id="ch11111805305633575643" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch11111805305633575643.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",热门综艺高清专区
+http://192.168.1.1:5140/rtp/239.93.16.192:9624
+#EXTINF:-1 tvg-id="ch12041016392557815902" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch12041016392557815902.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",音乐现场高清专区
+http://192.168.1.1:5140/rtp/239.93.16.162:9438
+#EXTINF:-1 tvg-id="ch17062300294251525513" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17062300294251525513.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",戏曲精选专区
+http://192.168.1.1:5140/rtp/239.93.17.80:7304
+#EXTINF:-1 tvg-id="ch11111620062533939369" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch11111620062533939369.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",戏曲专区
+http://192.168.1.1:5140/rtp/239.93.16.243:9930
+#EXTINF:-1 tvg-id="ch12040118145490750383" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch12040118145490750383.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",魅力时尚高清专区
+http://192.168.1.1:5140/rtp/239.93.16.164:9450
+#EXTINF:-1 tvg-id="ch18032217373609369429" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch18032217373609369429.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",生活时尚
+http://192.168.1.1:5140/rtp/239.93.17.175:7706
+#EXTINF:-1 tvg-id="ch14021716512334227942" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch14021716512334227942.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",爱生活高清专区
+http://192.168.1.1:5140/rtp/239.93.16.14:8078
+#EXTINF:-1 tvg-id="ch24062614495296697448" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch24062614495296697448.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",百变课堂专区
+http://192.168.1.1:5140/rtp/239.93.17.176:9976
+#EXTINF:-1 tvg-id="ch10102615085968797991" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch10102615085968797991.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",爱体育专区
+http://192.168.1.1:5140/rtp/239.93.16.12:8066
+#EXTINF:-1 tvg-id="ch12020815361749389015" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch12020815361749389015.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",电竞天堂高清专区
+http://192.168.1.1:5140/rtp/239.93.16.208:9720
+#EXTINF:-1 tvg-id="ch12020815361758979850" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch12020815361758979850.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",游戏风云
+http://192.168.1.1:5140/rtp/239.93.16.207:9714
+#EXTINF:-1 tvg-id="ch10102618215147013153" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch10102618215147013153.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",足球高清专区
+http://192.168.1.1:5140/rtp/239.93.16.13:8072
+#EXTINF:-1 tvg-id="ch11111620062520474882" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch11111620062520474882.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",红色影院专区
+http://192.168.1.1:5140/rtp/239.93.16.238:9900
+#EXTINF:-1 tvg-id="ch11111620062555415723" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch11111620062555415723.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",经典剧场专区
+http://192.168.1.1:5140/rtp/239.93.16.237:9894
+#EXTINF:-1 tvg-id="ch25010310501289306423" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch25010310501289306423.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",家庭理财
+http://192.168.1.1:5140/rtp/239.93.16.57:7954
+#EXTINF:-1 tvg-id="ch19081516194840035709" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch19081516194840035709.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",墨宝高清专区
+http://192.168.1.1:5140/rtp/239.93.16.155:7836
+#EXTINF:-1 tvg-id="ch11111805393748861921" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch11111805393748861921.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",军事高清专区
+http://192.168.1.1:5140/rtp/239.93.16.250:9972
+#EXTINF:-1 tvg-id="ch11111620062583018571" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch11111620062583018571.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",解密高清专区
+http://192.168.1.1:5140/rtp/239.93.16.219:9786
+#EXTINF:-1 tvg-id="ch11041519502908181648" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch11041519502908181648.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",地理高清专区
+http://192.168.1.1:5140/rtp/239.93.16.81:8480
+#EXTINF:-1 tvg-id="ch24013000320791618449" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch24013000320791618449.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",看天下精选专区
+http://192.168.1.1:5140/rtp/239.93.16.19:7056
+#EXTINF:-1 tvg-id="ch11092315112416925793" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch11092315112416925793.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",导视专区
+http://192.168.1.1:5140/rtp/239.93.16.217:9774
+#EXTINF:-1 tvg-id="ch10111711232848271659" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch10111711232848271659.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",收视指南专区
+http://192.168.1.1:5140/rtp/239.93.16.62:8366
+#EXTINF:-1 tvg-id="ch11111620062594651289" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch11111620062594651289.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",东方财经高清
+http://192.168.1.1:5140/rtp/239.93.16.223:9810
+#EXTINF:-1 tvg-id="ch24082617121996185075" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch24082617121996185075.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",4K视界专区
+http://192.168.1.1:5140/rtp/239.93.16.165:9978
+#EXTINF:-1 tvg-id="ch24013000315924847765" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch24013000315924847765.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",4K纪实专区
+http://192.168.1.1:5140/rtp/239.93.17.19:7054
+#EXTINF:-1 tvg-id="ch24013000314657786563" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch24013000314657786563.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",4K少儿专区
+http://192.168.1.1:5140/rtp/239.93.16.18:7052
+#EXTINF:-1 tvg-id="ch21071314482269600293" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CGTN.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch21071314482269600293.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CGTN西班牙语
+http://192.168.1.1:5140/rtp/239.93.17.204:8832
+#EXTINF:-1 tvg-id="ch21071314483398998030" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CGTN.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch21071314483398998030.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CGTN法语
+http://192.168.1.1:5140/rtp/239.93.17.205:8836
+#EXTINF:-1 tvg-id="ch26041420412233526063" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CGTN.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch26041420412233526063.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CGTN-纪录
+http://192.168.1.1:5140/rtp/239.93.16.249:7072
+#EXTINF:-1 tvg-id="ch26041515431199320126" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CGTN.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch26041515431199320126.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CGTN-阿拉伯语
+http://192.168.1.1:5140/rtp/239.93.16.248:7074
+#EXTINF:-1 tvg-id="ch26041510482568421795" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CGTN.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch26041510482568421795.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CGTN-俄语
+http://192.168.1.1:5140/rtp/239.93.17.5:7076
+#EXTINF:-1 tvg-id="ch20111914253905159622" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20111914253905159622.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",爱浪漫专区
+http://192.168.1.1:5140/rtp/239.93.17.237:8718
+#EXTINF:-1 tvg-id="ch20111914235019136005" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20111914235019136005.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",爱喜剧专区
+http://192.168.1.1:5140/rtp/239.93.17.225:8500
+#EXTINF:-1 tvg-id="ch20111914254752906818" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20111914254752906818.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",爱奇谈专区
+http://192.168.1.1:5140/rtp/239.93.17.238:8722
+#EXTINF:-1 tvg-id="ch20111914240324308990" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20111914240324308990.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",爱科幻专区
+http://192.168.1.1:5140/rtp/239.93.17.226:8568
+#EXTINF:-1 tvg-id="ch20111914241232731406" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20111914241232731406.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",爱院线专区
+http://192.168.1.1:5140/rtp/239.93.17.227:8572
+#EXTINF:-1 tvg-id="ch20121415501006778034" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20121415501006778034.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",都市剧场
+http://192.168.1.1:5140/rtp/239.93.17.245:8788
+#EXTINF:-1 tvg-id="ch20111914244050171352" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20111914244050171352.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",爱谍战专区
+http://192.168.1.1:5140/rtp/239.93.17.230:8596
+#EXTINF:-1 tvg-id="ch20111914243092809428" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20111914243092809428.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",爱历史专区
+http://192.168.1.1:5140/rtp/239.93.17.229:8592
+#EXTINF:-1 tvg-id="ch20111914242128567554" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20111914242128567554.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",爱悬疑专区
+http://192.168.1.1:5140/rtp/239.93.17.228:8576
+#EXTINF:-1 tvg-id="ch20111914245849522543" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20111914245849522543.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",爱旅行专区
+http://192.168.1.1:5140/rtp/239.93.17.232:8678
+#EXTINF:-1 tvg-id="ch16122916565952621436" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch16122916565952621436.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",少儿天地专区
+http://192.168.1.1:5140/rtp/239.93.17.249:8804
+#EXTINF:-1 tvg-id="ch20111914250665829868" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20111914250665829868.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",爱幼教专区
+http://192.168.1.1:5140/rtp/239.93.17.233:8682
+#EXTINF:-1 tvg-id="ch20111914251799202226" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20111914251799202226.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",爱玩具专区
+http://192.168.1.1:5140/rtp/239.93.17.234:8686
+#EXTINF:-1 tvg-id="ch20111914255525704959" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20111914255525704959.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",爱动漫专区
+http://192.168.1.1:5140/rtp/239.93.17.239:8736
+#EXTINF:-1 tvg-id="ch20111914260459007597" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20111914260459007597.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",求索频道高清
+http://192.168.1.1:5140/rtp/239.93.16.240:8740
+#EXTINF:-1 tvg-id="ch10102615085968797991" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch10102615085968797991.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",爱体育专区
+http://192.168.1.1:5140/rtp/239.93.16.12:8066
+#EXTINF:-1 tvg-id="ch20111914253234915262" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20111914253234915262.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",爱赛车专区
+http://192.168.1.1:5140/rtp/239.93.17.236:8700
+#EXTINF:-1 tvg-id="ch20121415502994696043" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20121415502994696043.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",爱宠宠物专区
+http://192.168.1.1:5140/rtp/239.93.17.247:8796
+#EXTINF:-1 tvg-id="ch18032217373609369429" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch18032217373609369429.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",生活时尚
+http://192.168.1.1:5140/rtp/239.93.17.175:7706
+#EXTINF:-1 tvg-id="ch20121415501707104705" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20121415501707104705.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",环球旅游
+http://192.168.1.1:5140/rtp/239.93.17.246:8792
+#EXTINF:-1 tvg-id="ch20111614372522862123" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20111614372522862123.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",来钓鱼吧专区
+http://192.168.1.1:5140/rtp/239.93.17.224:8496
+#EXTINF:-1 tvg-id="ch11111805305610175122" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch11111805305610175122.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",麻辣体育专区
+http://192.168.1.1:5140/rtp/239.93.16.210:9732
+#EXTINF:-1 tvg-id="ch20122110243540744016" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20122110243540744016.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",绚影4K专区
+http://192.168.1.1:5140/rtp/239.93.17.248:8800
+#EXTINF:-1 tvg-id="ch21081610292201960689" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch21081610292201960689.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",天元围棋
+http://192.168.1.1:5140/rtp/239.93.16.214:8860
+#EXTINF:-1 tvg-id="ch22071114192616320305" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch22071114192616320305.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",快乐垂钓
+http://192.168.1.1:5140/rtp/239.93.16.6:7010
+#EXTINF:-1 tvg-id="ch22041314063686799029" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch22041314063686799029.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",亲子趣学4K专区
+http://192.168.1.1:5140/rtp/239.93.16.236:8094
+#EXTINF:-1 tvg-id="ch22051118125652204893" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch22051118125652204893.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",4K乐享超清专区
+http://192.168.1.1:5140/rtp/239.93.16.246:8106
+#EXTINF:-1 tvg-id="ch24013000324037464290" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch24013000324037464290.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",书画频道
+http://192.168.1.1:5140/rtp/239.93.16.21:7064
+#EXTINF:-1 tvg-id="ch21060714335997673380" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch21060714335997673380.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",乐游
+http://192.168.1.1:5140/rtp/239.93.16.1:8824
+#EXTINF:-1 tvg-id="ch10102518435851031867" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch10102518435851031867.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",金色学堂
+http://192.168.1.1:5140/rtp/239.93.16.11:8060
+#EXTINF:-1 tvg-id="ch20111914244777762256" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20111914244777762256.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",法治天地
+http://192.168.1.1:5140/rtp/239.93.17.231:8674
+#EXTINF:-1 tvg-id="ch24013000323362527511" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch24013000323362527511.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",中国天气
+http://192.168.1.1:5140/rtp/239.93.17.21:7062
+#EXTINF:-1 tvg-id="ch24013000324970652863" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch24013000324970652863.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",四海钓鱼
+http://192.168.1.1:5140/rtp/239.93.17.22:7066
+#EXTINF:-1 tvg-id="ch22041314373512035771" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch22041314373512035771.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",动漫秀场
+http://192.168.1.1:5140/rtp/239.93.16.233:8082
+#EXTINF:-1 tvg-id="ch22041314375062930946" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch22041314375062930946.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",精彩影视
+http://192.168.1.1:5140/rtp/239.93.16.234:8086
+#EXTINF:-1 tvg-id="ch21102510480422282535" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CHC.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch21102510480422282535.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CHC家庭影院
+http://192.168.1.1:5140/rtp/239.93.16.220:8876
+#EXTINF:-1 tvg-id="ch21102510481513068453" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CHC.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch21102510481513068453.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CHC影迷电影
+http://192.168.1.1:5140/rtp/239.93.16.222:8880
+#EXTINF:-1 tvg-id="ch21102510482321576379" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/CHC.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch21102510482321576379.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",CHC动作电影
+http://192.168.1.1:5140/rtp/239.93.16.224:8884
+#EXTINF:-1 tvg-id="ch22071114190729027606" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch22071114190729027606.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",多彩文体4K
+http://192.168.1.1:5140/rtp/239.93.16.5:7000
+#EXTINF:-1 tvg-id="ch17011010533861476819" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch17011010533861476819.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",北京卫视4K
+http://192.168.1.1:5140/rtp/239.93.16.111:8662
+#EXTINF:-1 tvg-id="ch25101311062371930294" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch25101311062371930294.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",爱乐山
+http://192.168.1.1:5140/rtp/239.94.4.1:7070
+#EXTINF:-1 tvg-id="ch20113015214644887629" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/1.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20113015214644887629.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",中国体育1
+http://192.168.1.1:5140/rtp/239.93.16.241:8766
+#EXTINF:-1 tvg-id="ch20113015215505748477" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/2.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20113015215505748477.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",中国体育2
+http://192.168.1.1:5140/rtp/239.93.17.242:8770
+#EXTINF:-1 tvg-id="ch20113015220258784886" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/3.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20113015220258784886.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",中国体育3
+http://192.168.1.1:5140/rtp/239.93.17.243:8774
+#EXTINF:-1 tvg-id="ch20042917203061701322" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20042917203061701322.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",精彩推荐专区
+http://192.168.1.1:5140/rtp/239.93.17.217:8416
+#EXTINF:-1 tvg-id="ch20050614443681953893" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20050614443681953893.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",红原日干乔
+http://192.168.1.1:5140/rtp/239.93.17.213:8428
+#EXTINF:-1 tvg-id="ch20050616471196678482" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch20050616471196678482.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",红原月亮湾
+http://192.168.1.1:5140/rtp/239.93.16.213:8424
+#EXTINF:-1 tvg-id="ch22120713130692648259" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/3.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch22120713130692648259.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",收视导视-3
+http://192.168.1.1:5140/rtp/239.93.16.16:7038
+#EXTINF:-1 tvg-id="ch21072909380235825742" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch21072909380235825742.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",雅克音乐季直播
+http://192.168.1.1:5140/rtp/239.93.17.211:8848
+#EXTINF:-1 tvg-id="ch21072909381224231597" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch21072909381224231597.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",雅克音乐季宣传
+http://192.168.1.1:5140/rtp/239.93.17.207:8852
+#EXTINF:-1 tvg-id="ch12120410035474031598" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch12120410035474031598.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",云演艺宣传
+http://192.168.1.1:5140/rtp/239.93.16.130:8780
+#EXTINF:-1 tvg-id="ch21122910120256722582" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/“”.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch21122910120256722582.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",四川省首届“蜀乡村歌”大赛总决赛
+http://192.168.1.1:5140/rtp/239.93.17.27:8170
+#EXTINF:-1 tvg-id="ch21071314484308316502" tvg-logo="https://gcore.jsdelivr.net/gh/taksssss/tv/icon/.png" group-title="南充频道" catchup="default" catchup-source="http://192.168.1.1:5140/rtsp/118.120.95.196:554/live/ch21071314484308316502.mpg?vcdnid=001&programbegin={(b)yyyyMMddHHmmss}+08&programend={(e)yyyyMMddHHmmss}+08",华西证券
+http://192.168.1.1:5140/rtp/239.93.16.206:8840
