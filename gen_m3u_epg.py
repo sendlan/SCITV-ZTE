@@ -27,6 +27,7 @@ LAN_IP = CFG.get("LAN_IP", "192.168.1.50")
 HTTP_PORT = CFG.get("HTTP_PORT", "5140")
 TS_SERVER = CFG.get("TS_SERVER", "")
 TS_VENDOR = CFG.get("TS_VENDOR", "001")
+FCC_SERVER = CFG.get("FCC_SERVER", "")
 CITY_NAME = CFG.get("CITY_NAME", "")
 CITY_ID = CFG.get("CITY_ID", "")
 
@@ -85,7 +86,8 @@ def build(channels, time_format, use_proxy=True, use_dollar=False):
         logo = f"https://gcore.jsdelivr.net/gh/taksssss/tv/icon/{base}.png"
         group = f"{CITY_NAME}组播" if CITY_NAME else "IPTV"
         out.append(f"#EXTINF:-1 tvg-id=\"{chid}\" tvg-logo=\"{logo}\" group-title=\"{group}\"{catchup},{name}")
-        out.append(f"http://{LAN_IP}{port}/rtp/{igmp}")
+        fcc = f"?fcc={FCC_SERVER}&fcc-type=telecom" if FCC_SERVER else ""
+        out.append(f"http://{LAN_IP}{port}/rtp/{igmp}{fcc}")
     return "\n".join(out) + "\n", skipped
 
 
