@@ -132,7 +132,7 @@ def get_channels(ut):
             nm = json.loads('"%s"' % nm)
         except Exception:
             pass
-        tvs.append({"mixno": mt.group(1), "tvid": mt.group(3), "name": nm})
+        tvs.append({"mixno": mt.group(1), "tstvlife": mt.group(2), "tvid": mt.group(3), "name": nm})
     # 2) addChannel: ChannelID(live), ChannelName, igmp, TimeShiftURL
     blocks = re.findall(r'addChannel\([^;]+;', txt)
     adds = []
@@ -158,7 +158,12 @@ def get_channels(ut):
             "mixno": tv["mixno"],
             "name": tv["name"],
             "igmp": a["igmp"] if a else "",
-            "timeshift": a["ts"] if a else "",
+            # 回看是否可用由 jsSetChannelInfo 第3字段 TSTVTimeLife(回看时长秒) 决定。
+            # addChannel 的 TimeShift 属性在部分频道(如"XX综合高清")为 1 但 TSTVTimeLife=0,
+            # 按它生成 catchup 会让播放器显示回看入口却一点就 503。
+            "timeshift": "1" if (tv.get("tstvlife") or "0").isdigit() and int(tv["tstvlife"]) > 0 else "0",
+            "tstvlife": tv.get("tstvlife", ""),
+            "shift_raw": a["ts"] if a else "",
             "timeshiftURL": a["tsurl"] if a else "",
         })
     return channels
@@ -190,10 +195,10 @@ def to_xmltv_date(s):
         return None
 
 
-def build_xmltv(channels, days=2):
+def build_xmltv(channels, days=3):  # 电信回看实际存储约7天(实测6天前可回看), 由2天扩展
     """生成 XMLTV 节目单"""
     out = ['<?xml version="1.0" encoding="UTF-8"?>',
-           '<tv generator-info-name="nanchong-iptv-epg">']
+           '<tv generator-info-name="city-iptv-epg">']
     for ch in channels:
         chid = ch.get("channelid") or ch.get("tvid") or ch.get("mixno", "")
         out.append(f'  <channel id="{html.escape(chid)}">')
