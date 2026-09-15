@@ -5,7 +5,6 @@
 # 输出 (路径见 /etc/iptv.conf 的 CITY_ID):
 #   /www/{城市}.m3u        -> TVBox/DIYP 用, 长格式 {(b)yyyyMMddHHmmss}+08, 走:5140 口
 #   /www/player.m3u        -> 内置 rtp2httpd 播放器用, 短格式 {(b)YmdHMS}, 走 80 口
-#   /www/{城市}_vst.m3u    -> VST/kookong 标准 ${} 回看格式
 # 参数从 /etc/iptv.conf 读取。
 # ------------------------------------------------------------
 import json, re
@@ -23,7 +22,7 @@ try:
 except Exception:
     pass
 
-LAN_IP = CFG.get("LAN_IP", "192.168.1.50")
+LAN_IP = CFG.get("LAN_IP", "192.168.1.1")
 HTTP_PORT = CFG.get("HTTP_PORT", "5140")
 TS_SERVER = CFG.get("TS_SERVER", "")
 TS_VENDOR = CFG.get("TS_VENDOR", "001")
@@ -36,11 +35,24 @@ EPG_URL = f"http://{LAN_IP}/epg.xml"
 
 TVBOX_FORMAT = "yyyyMMddHHmmss"
 PLAYER_FORMAT = "YmdHMS"
-VST_FORMAT = "yyyyMMddHHmmss"
 
 # 排除: PIP小窗 + 九宫格频道组合页（非真实单频道，不可独立播放）
 BLACKLIST = ["PIP", "高清直播室", "天翼高清", "央视频道", "卫视频道", "综合卫视",
              "本地频道", "热门卫视", "地方卫视", "付费频道"]
+
+
+def is_keep(name):
+    """白名单: CCTV1-17 与名称含"卫视"的频道, 即使无信号检测也保留"""
+    m = re.search(r'CCTV[- ]?([0-9]{1,3})', name or "")
+    if m:
+        try:
+            if 1 <= int(m.group(1)) <= 17:
+                return True
+        except ValueError:
+            pass
+    if "卫视" in (name or ""):
+        return True
+    return False
 
 
 def norm(s):
@@ -54,10 +66,9 @@ def is_blacklisted(name):
     return False
 
 
-def build(channels, time_format, use_proxy=True, use_dollar=False):
+def build(channels, time_format, use_proxy=True):
     """use_proxy=True  -> 城市.m3u: 走 HTTP_PORT, 时间戳 +08
-       use_proxy=False -> player.m3u: 走 80 口, 无 +08
-       use_dollar=True -> 城市_vst.m3u: VST 标准 ${} 前缀"""
+       use_proxy=False -> player.m3u: 走 80 口, 无 +08"""
     out = ["#EXTM3U x-tvg-url=\"%s\"" % EPG_URL]
     skipped = 0
     tz = "+08" if use_proxy else ""
@@ -71,20 +82,25 @@ def build(channels, time_format, use_proxy=True, use_dollar=False):
         if not igmp:
             skipped += 1
             continue
+        # 无视频反馈的频道排除 (由 /etc/iptv_probe.py 标记), 白名单除外
+        if ch.get("healthy") is False and not is_keep(name):
+            skipped += 1
+            continue
         chid = ch.get("channelid") or ch.get("tvid", "")
         catchup = ""
-        if chid:
-            dollar = "$" if use_dollar else ""
+        # 仅电信平台已开通时移回看(timeshift=1)的频道生成 catchup,
+        # 避免播放器显示回看入口但实际 503 (如 CCTV-4K 等 TSTVTimeLife=0 的频道)
+        if chid and ch.get("timeshift") == "1":
             csrc = (f"http://{LAN_IP}{port}/rtsp/{TS_SERVER}/live/{chid}.mpg"
                     f"?vcdnid={TS_VENDOR}"
-                    f"&programbegin={dollar}{{(b){time_format}}}{tz}"
-                    f"&programend={dollar}{{(e){time_format}}}{tz}")
+                    f"&programbegin={{(b){time_format}}}{tz}"
+                    f"&programend={{(e){time_format}}}{tz}")
             catchup = f" catchup=\"default\" catchup-source=\"{csrc}\""
         base = norm(name)
         base = re.sub(r"(高清|超清|4K|标清|HD|SD)$", "", base)
         base = re.sub(r"[\（[^）]*\）|\([^)]*\)", "", base)
         logo = f"https://gcore.jsdelivr.net/gh/taksssss/tv/icon/{base}.png"
-        group = f"{CITY_NAME}组播" if CITY_NAME else "IPTV"
+        group = f"{CITY_NAME}电信组播" if CITY_NAME else "IPTV"
         out.append(f"#EXTINF:-1 tvg-id=\"{chid}\" tvg-logo=\"{logo}\" group-title=\"{group}\"{catchup},{name}")
         fcc = f"?fcc={FCC_SERVER}&fcc-type=telecom" if FCC_SERVER else ""
         out.append(f"http://{LAN_IP}{port}/rtp/{igmp}{fcc}")
@@ -94,12 +110,11 @@ def build(channels, time_format, use_proxy=True, use_dollar=False):
 def main():
     chans = json.load(open(CHANNEL_FILE))
     m3us = [
-        (f"/www/{CITY_ID}.m3u",     TVBOX_FORMAT,  True,  False),  # TVBox/DIYP  请按需求选择
-        ("/www/player.m3u",         PLAYER_FORMAT, False, False),  # rtp2httpd内置  请按需求选择
-        (f"/www/{CITY_ID}_vst.m3u", VST_FORMAT,    True,  True),   # VST/kookong  请按需求选择
+        (f"/www/{CITY_ID}.m3u",     TVBOX_FORMAT,  True),  # TVBox/DIYP
+        ("/www/player.m3u",         PLAYER_FORMAT, False),  # 内置 rtp2httpd
     ]
-    for path, fmt, proxy, dollar in m3us:
-        content, skipped = build(chans, fmt, use_proxy=proxy, use_dollar=dollar)
+    for path, fmt, proxy in m3us:
+        content, skipped = build(chans, fmt, use_proxy=proxy)
         open(path, "w").write(content)
         n = content.count("#EXTINF")
         print(f"m3u -> {path}, {n} channels (skipped {skipped}), format={fmt}, proxy={proxy}")

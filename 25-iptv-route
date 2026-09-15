@@ -8,6 +8,6 @@
 [ -r /etc/iptv.conf ] && . /etc/iptv.conf
 
 EDGE_NET="${IGMP_NET:-182.146.0.0/16}"
-EDGE_GW="${IGMP_GW:-10.246.64.1}"
+EDGE_GW="${IGMP_GW:-你的IPTV接口网关}"
 
 ip route replace "$EDGE_NET" via "$EDGE_GW" dev iptv metric 20
