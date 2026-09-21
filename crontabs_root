@@ -1,8 +1,8 @@
 # ===== IPTV 调度 =====
-# 频道列表: 每月 1 号 04:05 抓取一次
-5 4 1 * * /etc/iptv_auth.sh >/dev/null 2>&1
+# 频道列表: 每月 1 号 04:05 抓取一次 (只抓列表, 不探测)
+5 4 1 * * /etc/iptv_auth.sh --no-probe >/dev/null 2>&1
+# 频道健康探测: 每月 1 号 20:17 单独跑 (黄金时段, 全频道都在播, 避免分时段频道误判)
+17 20 1 * * /etc/iptv_auth.sh --probe >/dev/null 2>&1
 # 节目单 + 播放列表: 每 6 小时刷新 (复用缓存的频道列表, 不重复抓取)
 17 */6 * * * /etc/iptv_refresh.sh >/dev/null 2>&1
 3 3 12 12 * /usr/bin/nginx-util 'check_ssl'
-
-*/30 * * * * /usr/bin/modem-v6-watchdog.sh

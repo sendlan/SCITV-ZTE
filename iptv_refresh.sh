@@ -16,4 +16,6 @@ if [ ! -f /www/iptv_channels.json ]; then
 fi
 
 python3 /etc/iptv_epg.py epg >> "$LOG" 2>&1
+# 快速回捞: 只复测当前被排除的频道, 一旦恢复信号立刻回到列表 (只转正不降级)
+python3 /etc/iptv_probe.py --only-excluded >> "$LOG" 2>&1
 python3 /etc/gen_m3u_epg.py >> "$LOG" 2>&1

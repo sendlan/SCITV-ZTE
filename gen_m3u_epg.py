@@ -29,6 +29,8 @@ TS_VENDOR = CFG.get("TS_VENDOR", "001")
 FCC_SERVER = CFG.get("FCC_SERVER", "")
 CITY_NAME = CFG.get("CITY_NAME", "")
 CITY_ID = CFG.get("CITY_ID", "")
+KEEP_KEYWORDS = [k for k in CFG.get("KEEP_KEYWORDS", "卫视").split(",") if k]
+EXCLUDE_AFTER = int(CFG.get("EXCLUDE_AFTER", "2") or 2)
 
 CHANNEL_FILE = "/www/iptv_channels.json"
 EPG_URL = f"http://{LAN_IP}/epg.xml"
@@ -52,6 +54,9 @@ def is_keep(name):
             pass
     if "卫视" in (name or ""):
         return True
+    for _kw in KEEP_KEYWORDS:
+        if _kw and _kw in (name or ""):
+            return True
     return False
 
 
@@ -83,18 +88,32 @@ def build(channels, time_format, use_proxy=True):
             skipped += 1
             continue
         # 无视频反馈的频道排除 (由 /etc/iptv_probe.py 标记), 白名单除外
-        if ch.get("healthy") is False and not is_keep(name):
+        if (ch.get("healthy") is False
+                and int(ch.get("fail_streak") or 0) >= EXCLUDE_AFTER
+                and not is_keep(name)):
             skipped += 1
             continue
         chid = ch.get("channelid") or ch.get("tvid", "")
         catchup = ""
-        # 仅电信平台已开通时移回看(timeshift=1)的频道生成 catchup,
-        # 避免播放器显示回看入口但实际 503 (如 CCTV-4K 等 TSTVTimeLife=0 的频道)
+        # 仅电信平台已开通时移回看(timeshift=1)的频道生成 catchup。
+        # 优先用 frameset 实时下发的完整 TimeShiftURL(含 AuthInfo 签名, 实测47小时仍有效):
+        #   .sdp -> .mpg, 主机换为 rtp2httpd 转发 (/rtsp/), 用播放器时间填 programbegin/end。
+        # 该签名由 iptv_epg.py 抓取时写入 channels.json 的 timeshiftURL 字段。
         if chid and ch.get("timeshift") == "1":
-            csrc = (f"http://{LAN_IP}{port}/rtsp/{TS_SERVER}/live/{chid}.mpg"
-                    f"?vcdnid={TS_VENDOR}"
-                    f"&programbegin={{(b){time_format}}}{tz}"
-                    f"&programend={{(e){time_format}}}{tz}")
+            tsurl = ch.get("timeshiftURL") or ""
+            if tsurl:
+                csrc = tsurl.replace(".sdp", ".mpg").replace("rtsp://", "")
+                # frameset 下发 time=...+08 为字面加号, URL 中 + 会被解析成空格,
+                # 需转义为 %2B08 (签名匹配, 实测有效)
+                csrc = csrc.replace("+08", "%2B08")
+                csrc = f"http://{LAN_IP}{port}/rtsp/{csrc}"
+                csrc = f"{csrc}&programbegin={{(b){time_format}}}{tz}&programend={{(e){time_format}}}{tz}"
+            else:
+                # 兜底: 无实时签名时用自拼 URL (部分地区无 AuthInfo)
+                csrc = (f"http://{LAN_IP}{port}/rtsp/{TS_SERVER}/live/{chid}.mpg"
+                        f"?vcdnid={TS_VENDOR}"
+                        f"&programbegin={{(b){time_format}}}{tz}"
+                        f"&programend={{(e){time_format}}}{tz}")
             catchup = f" catchup=\"default\" catchup-source=\"{csrc}\""
         base = norm(name)
         base = re.sub(r"(高清|超清|4K|标清|HD|SD)$", "", base)
