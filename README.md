@@ -13,17 +13,23 @@
 
 | 任务 | 脚本 | 调度 | 说明 |
 |------|------|------|------|
-| 抓取**频道列表** | `/etc/iptv_auth.sh` | 每月 1 号 04:05 | 认证 + 抓最新频道列表 → `iptv_channels.json` |
-| **探测频道健康** | `/etc/iptv_probe.py` | 随 auth(每月一次) | 逐个频道拉组播流, 无信号的打 `healthy=false`, 自动进黑名单 |
-| 刷新**节目单 EPG** | `/etc/iptv_refresh.sh` | 每 6 小时 | 刷 EPG + 按 healthy 重建 m3u |
+| 抓取**频道列表** | `/etc/iptv_auth.sh --no-probe` | 每月 1 号 04:05 | 认证 + 抓最新频道列表 → `iptv_channels.json` |
+| **探测频道健康** | `/etc/iptv_auth.sh --probe` | 每月 1 号 20:17 | 跑 `iptv_probe.py --reset-streak --passes 2`, 打 `healthy`/`fail_streak` 并按结果重建 m3u |
+| 刷新**节目单 EPG** | `/etc/iptv_refresh.sh` | 每 6 小时 | 刷 EPG + 快速回捞被排除频道 + 重建 m3u |
 | 转发/路由 | `25-iptv-route` + `rtp2httpd` | 开机/接口up | 组播转 HTTP、EPG 网段路由 |
 
 **设计要点**:
-- 频道列表 + 健康探测都是"慢数据", 每月一次。
+- 频道列表 + 健康探测都是"慢数据", 每月一次, 且**分成两次调度**:
+  04:05 只抓列表(避开高峰), 20:17 再探测(黄金时段, 全频道都在播)。
+- **探测为什么要挑 20:17 而不是跟着 04:05 跑**:
+  "乐游 / 金色学堂 / 来钓鱼吧专区 / 雅克音乐季" 这类**分时段·事件型**频道在凌晨是真的没有流,
+  凌晨探测会把它们**每个周期都确定性地误判**为无信号。挑黄金时段是治这个病的。
 - 节目单是"快数据", 每 6 小时刷一次, 且不重复抓列表/探测, 减少对运营商网关的访问频率。
-- **无信号自动排除**: 探测结果记为 `healthy`, m3u 生成时自动跳过 `healthy=false` 的频道
-  (如 中国体育、华西证券、天翼高清临时频道 等), 但 **CCTV1-17 和含"卫视"的频道不受影响**,
-  即使探测失败也保留, 不会误删主流频道。
+- **无信号自动排除**: 探测结果记为 `healthy` + `fail_streak`, m3u 生成时自动跳过
+  `healthy=false` **且** `fail_streak >= EXCLUDE_AFTER` 的频道
+  (如 中国体育、华西证券、天翼高清临时频道 等)。
+  白名单里的频道(CCTV1-17 / 含"卫视" / `KEEP_KEYWORDS` 命中的)即使探测失败也保留, 不会误删主流频道。
+- **抗误杀三板斧**(详见 §六): 单轮多次重试、月内双轮复核、每 6 小时快速回捞。
 
 ---
 
@@ -31,12 +37,12 @@
 
 | 文件 | 部署位置 | 作用 |
 |------|----------|------|
-| `iptv.conf` | `/etc/iptv.conf` | **唯一需要你改的文件** (账号/服务器参数) |
-| `iptv_auth.sh` | `/etc/iptv_auth.sh` | 抓频道列表 + 探测健康 + 重建 m3u (每月) |
-| `iptv_probe.py` | `/etc/iptv_probe.py` | 探测每个频道组播是否有视频反馈 |
-| `iptv_refresh.sh` | `/etc/iptv_refresh.sh` | 刷 EPG + 重建 m3u (每6h) |
+| `iptv.conf` | `/etc/iptv.conf` | **唯一需要你改的文件** (账号/服务器参数, 另含可选的白名单/阈值开关) |
+| `iptv_auth.sh` | `/etc/iptv_auth.sh` | 月度任务。`--no-probe` 只抓列表; `--probe` 探测+重建 m3u |
+| `iptv_probe.py` | `/etc/iptv_probe.py` | 探测频道组播健康度, 维护 `healthy` / `fail_streak` 与黑名单 |
+| `iptv_refresh.sh` | `/etc/iptv_refresh.sh` | 刷 EPG + 快速回捞被排除频道 + 重建 m3u (每6h) |
 | `iptv_epg.py` | `/etc/iptv_epg.py` | 认证/抓频道/抓节目单的核心逻辑 |
-| `gen_m3u_epg.py` | `/etc/gen_m3u_epg.py` | 从频道列表生成多套 m3u, 排除无信号频道 |
+| `gen_m3u_epg.py` | `/etc/gen_m3u_epg.py` | 从频道列表生成多套 m3u, 按健康标记排除无信号频道 |
 | `25-iptv-route` | `/etc/hotplug.d/iface/25-iptv-route` | IPTV 接口up时加路由 |
 | `crontabs_root` | 参考 `/etc/crontabs/root` | 定时任务样例 |
 
@@ -102,6 +108,8 @@ ssh root@192.168.1.1 "chmod +x /etc/iptv_auth.sh /etc/iptv_refresh.sh /etc/iptv_
 | `LAN_IP` / `HTTP_PORT` | 对外地址 / rtp2httpd 端口 | 你自己 |
 | `IGMP_NET`/`IGMP_GW` | IPTV 网段/网关 | `ip route` 观察 |
 | `CITY_NAME`/`CITY_ID` | 城市名(显示/文件名) | 自己 |
+| `KEEP_KEYWORDS` | (可选)白名单关键词, 逗号分隔, 默认 `卫视` | 见 §六 |
+| `EXCLUDE_AFTER` | (可选)连续失败几轮才排除, 默认 `2` | 见 §六 |
 
 > **怎么拿 AUTHENTICATOR** (没法直接要): 电脑/路由器在机顶盒和光猫之间抓包,
 > 抓机顶盒开机向 `EPG_HOST` 发的 `auth.jsp` POST 里的 `Authenticator` 参数。
@@ -112,9 +120,11 @@ ssh root@192.168.1.1 "chmod +x /etc/iptv_auth.sh /etc/iptv_refresh.sh /etc/iptv_
 写入 `/etc/crontabs/root` 后重启 cron:
 
 ```
-# 频道列表+健康探测: 每月 1 号 04:05
-5 4 1 * * /etc/iptv_auth.sh >/dev/null 2>&1
-# 节目单+播放列表: 每 6 小时刷新
+# 频道列表: 每月 1 号 04:05 抓取一次 (只抓列表, 不探测)
+5 4 1 * * /etc/iptv_auth.sh --no-probe >/dev/null 2>&1
+# 频道健康探测: 每月 1 号 20:17 单独跑 (黄金时段, 全频道都在播, 避免分时段频道误判)
+17 20 1 * * /etc/iptv_auth.sh --probe >/dev/null 2>&1
+# 节目单 + 播放列表: 每 6 小时刷新 (复用缓存的频道列表, 不重复抓取)
 17 */6 * * * /etc/iptv_refresh.sh >/dev/null 2>&1
 ```
 
@@ -122,7 +132,10 @@ ssh root@192.168.1.1 "chmod +x /etc/iptv_auth.sh /etc/iptv_refresh.sh /etc/iptv_
 /etc/init.d/cron restart
 ```
 
-> 想每半个月: 第一行改成 `5 4 1,15 * * /etc/iptv_auth.sh`。
+> **那两行月度任务不要合并成一行。** `--no-probe` 必须留在凌晨(避开运营商网关高峰),
+> 探测必须挪到晚上(见 §一 的设计要点)。合并会重新引入"分时段频道被确定性误判"的老问题。
+>
+> 想每半个月: 把日期 `1` 改成 `1,15`。
 
 ### 6. 组播转 HTTP (rtp2httpd)
 
@@ -144,19 +157,28 @@ EOF
 ## 四、手动测试
 
 ```
-# 1. 每月任务: 抓列表 + 探测健康 + 重建 m3u
+# 1. 完整跑一遍: 抓列表 + 探测(黑名单清零+双轮) + 重建 m3u
 /etc/iptv_auth.sh
-#    只看探测+重建(不重抓列表):
+
+# 2. 只抓列表(不探测, 相当于凌晨那趟)
+/etc/iptv_auth.sh --no-probe
+
+# 3. 只探测+重建(不重抓列表, 相当于晚上那趟)
 /etc/iptv_auth.sh --probe
 
-# 2. 探测结果
-cat /www/iptv_bad.txt            # 被排除的无信号频道
-# 健康统计见脚本输出: "健康 X / 无信号 Y"
+# 4. 只看探测结果
+cat /www/iptv_bad.txt            # 当前被排除的无信号频道
+# 详细判定见脚本输出: ok / partial(有数据但慢) / dead 三态统计
 
-# 3. 刷节目单(每6小时任务)
+# 5. 单跑探测器(可选参数见下)
+python3 /etc/iptv_probe.py --help
+python3 /etc/iptv_probe.py --only-excluded        # 只复测被排除频道, 只转正不降级
+python3 /etc/iptv_probe.py --dry-run --sample 20  # 随机抽 20 个试跑, 不写回文件
+
+# 6. 刷节目单(每6小时任务)
 python3 /etc/iptv_epg.py epg
 
-# 4. 验证路由
+# 7. 验证路由
 ip route | grep 182
 ```
 
@@ -174,20 +196,73 @@ ip route | grep 182
 
 ## 六、探测与排除逻辑(FCC/无信号专题)
 
-**为什么用纯组播探测?**
+### 为什么用纯组播探测?
+
 - rtp2httpd 带 FCC 参数并发拉流会因 FCC 会话冲突误判;
   纯组播是持续广播, 并发无冲突, 且"有没有画面"本质取决于组播有无数据。
 - 实测: 4 并发纯组播探测 316 频道约 4 分钟, 判定可靠。
 
-**判定标准**: 4 秒内收到 ≥300KB 视频数据 → healthy; 否则无信号。
+### 判定标准(三态)
 
-**白名单**: 名称匹配 `CCTV 1-17` 或含"卫视"的频道, 即使探测失败也保留。
-(防止个别时段某卫视暂时无信号被误删。)
+每个频道每轮最多尝试 `ATTEMPTS` 次(默认 3), 每次最多观察 `PROBE_TIME` 秒(默认 5):
 
-**探测出的无信号典型**: 中国体育1-3、华西证券、天翼高清临时频道、
-雅克音乐季(非直播时段)、付费频道、国产SA频道残留等。
+| 判定 | 条件 | 处理 |
+|---|---|---|
+| `ok` | 任一次拿到 ≥ `GOOD_BYTES`(128KB) | 健康 |
+| `partial` | 拿到 >0 但不足 128KB | **算健康**(慢启动/低码率, 不是故障) |
+| `dead` | 本轮所有尝试都是 0 字节 | 本轮失败 |
 
-建议新台出现时手动跑一次 `/etc/iptv_auth.sh --probe` 更新黑名单。
+> 静态图/彩条频道码率极低, 按老的"必须 300KB"标准会被误杀, 所以引入了 `partial`。
+
+### 黑名单机制(抗误杀的核心)
+
+```
+fail_streak = 本"月度周期"内的连续失败轮数
+排除条件     = healthy=False 且 fail_streak >= EXCLUDE_AFTER(默认2) 且不在白名单
+```
+
+月度任务 `iptv_auth.sh --probe` 内部调用的是 `--reset-streak --passes 2`:
+
+1. **跨月归零** —— 先把所有频道 `fail_streak` 清零, 每月的黑名单从零重算。
+   运营商本月新开通/修复的频道, 下个周期一定能自己回来。
+2. **月内双轮** —— 第 1 轮全量; 间隔 30 秒后, 第 2 轮**只复核第 1 轮判 dead 的频道**。
+   两轮都 dead 才让 `fail_streak` 达到 2 而被排除 → **单轮抖动不会造成误杀**。
+
+### 每 6 小时的快速回捞
+
+`iptv_refresh.sh` 里有一行:
+
+```
+python3 /etc/iptv_probe.py --only-excluded
+```
+
+它**只复测当前已被排除的频道, 且只做转正、不做降级**。
+所以它不可能造成新的误杀, 而被误判的频道也不必干等一个月 —— 一旦恢复信号立刻回到列表。
+
+### 白名单
+
+名称匹配 `CCTV 1-17` 或命中 `KEEP_KEYWORDS`(默认 `卫视`)的频道,
+即使探测失败也保留, 不参与排除。
+
+> **CHC 等付费电影频道不进白名单。** 它们确实起播慢, 但那是"慢"不是"死" ——
+> 靠上面的**多次重试 + `partial` 三态判定**就能自己通过, 不需要靠白名单兜。
+> 真正长期没信号的付费频道, 就应该和别的频道一样被排除掉。
+>
+> 要给自己的频道开豁免, 改 `iptv.conf` 的 `KEEP_KEYWORDS`(逗号分隔)即可。
+
+### 探测出的无信号典型
+
+中国体育1-3、华西证券、天翼高清1-12、付费频道、各类 PIP(画中画)频道、
+陕西农林PIP、CCTV-5+(平台未下发组播地址) 等。这些是**真没有信号**, 不是误判。
+
+### 手工复测某个可疑频道
+
+```sh
+printf 'CCTV-1高清\nCHC家庭影院\n你的可疑频道名\n' > /tmp/names.txt
+python3 -u /etc/iptv_probe.py --names-file /tmp/names.txt --dry-run
+```
+
+**务必夹带 2-3 个已知正常频道做对照**, 否则无法判断是探测方法坏了还是频道真死。
 
 ---
 
@@ -199,7 +274,8 @@ ip route | grep 182
 | 无频道 | 抓包对比 frameset_builder 参数; 门户组号 `USER_GROUP` 不对 |
 | 直播花屏/卡顿 | 组播网段路由缺失: 检查 `ip route` 里 182.146.x 走 iptv 口 |
 | 回看不出来 | `TS_SERVER`/`TS_VENDOR` 不对; 播放器不支持 catchup 格式 |
-| 某频道一直消失 | 是被健康探测排除了: 看 `/www/iptv_bad.txt` |
+| 某频道一直消失 | 被健康探测排除了: 看 `/www/iptv_bad.txt`; 若确认它其实有信号, 直接跑 `python3 /etc/iptv_probe.py --only-excluded` 复测, 有流就立刻转正(不必等下次月度任务) |
+| 某频道被误杀想做长期豁免 | 把关键词加进 `iptv.conf` 的 `KEEP_KEYWORDS`, 再跑一次 `/etc/iptv_auth.sh --probe` |
 | 换台还是慢 | FCC 是否在 m3u URL 上(看 `?fcc=`); 播放器缓冲策略也影响起播 |
 | 节目单空白 | EPG 网段路由断; 认证频率过高被限流 |
 

@@ -231,6 +231,30 @@ def build_xmltv(channels, days=3):  # 电信回看实际存储约7天(实测6天
     return "\n".join(out)
 
 
+def _key(c):
+    """频道身份键: 优先 channelid, 其次 tvid, 最后名称"""
+    return c.get("channelid") or c.get("tvid") or c.get("name") or ""
+
+
+def inherit_health(new, path):
+    """重抓频道列表时, 按身份键继承上一次的 healthy / fail_streak 等字段。
+    否则抓完列表就把探测结果冲掉, 会让已排除的无信号频道重新冒出来。"""
+    try:
+        old = {_key(c): c for c in json.load(open(path, encoding="utf-8"))}
+    except Exception:
+        return 0
+    kept = 0
+    for c in new:
+        o = old.get(_key(c))
+        if not o:
+            continue
+        for f in ("healthy", "fail_streak", "last_probe", "last_probe_bytes"):
+            if f in o:
+                c[f] = o[f]
+        kept += 1
+    return kept
+
+
 def main():
     args = sys.argv[1:]
     mode = args[0] if args else "all"
@@ -239,8 +263,9 @@ def main():
         if not ut:
             sys.exit(1)
         chans = get_channels(ut)
-        json.dump(chans, open(CHANNEL_FILE, "w"), ensure_ascii=False)
-        log(f"频道列表: {len(chans)}个 -> {CHANNEL_FILE}")
+        kept = inherit_health(chans, CHANNEL_FILE)
+        json.dump(chans, open(CHANNEL_FILE, "w", encoding="utf-8"), ensure_ascii=False)
+        log(f"频道列表: {len(chans)}个 -> {CHANNEL_FILE} (继承历史健康标记 {kept} 个)")
         if mode == "channels":
             return
     # EPG
