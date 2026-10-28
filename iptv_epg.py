@@ -1,14 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# IPTV 内网EPG: 认证 + 频道列表 + 节目单 -> XMLTV
-# ------------------------------------------------------------
-# 用法:
-#   /etc/iptv_epg.py channels   仅抓取频道列表 -> /www/iptv_channels.json
-#   /etc/iptv_epg.py epg        用已有频道列表刷新节目单 -> /www/epg.xml
-#   /etc/iptv_epg.py all        先抓频道列表再刷节目单
-#
-# 所有密钥/参数从 /etc/iptv.conf 读取, 见该文件。
-# ------------------------------------------------------------
+# IPTV 内网 EPG: 认证 + 频道列表 + 节目单
+#   iptv_epg.py channels   抓频道列表 -> /www/iptv_channels.json
+#   iptv_epg.py epg        刷新节目单 -> /www/epg.xml
+#   iptv_epg.py all        两者都做
+# 参数从 /etc/iptv.conf 读取。
 import json, re, sys, time, html, datetime
 import urllib.request, urllib.parse
 import http.cookiejar
@@ -123,7 +119,7 @@ def get_channels(ut):
                     data=b"MAIN_WIN_SRC=%2Fiptvepg%2Fframe6%2Fportal.jsp&NEED_UPDATE_STB=1&BUILD_ACTION=FRAMESET_BUILDER",
                     timeout=40)
     txt = body.decode("gbk", errors="replace")
-    # 1) jsSetChannelInfo: mixno, tvid(ch0000...), name -> EPG节目单ID
+    # 1) jsSetChannelInfo -> EPG 节目单 ID
     js_pat = re.compile(r"jsSetChannelInfo\('(\d+)','\d+','(\d+)','\d+','([^']+)','([^']+)'[^;]*;")
     tvs = []
     for mt in js_pat.finditer(txt):
@@ -158,9 +154,7 @@ def get_channels(ut):
             "mixno": tv["mixno"],
             "name": tv["name"],
             "igmp": a["igmp"] if a else "",
-            # 回看是否可用由 jsSetChannelInfo 第3字段 TSTVTimeLife(回看时长秒) 决定。
-            # addChannel 的 TimeShift 属性在部分频道(如"XX综合高清")为 1 但 TSTVTimeLife=0,
-            # 按它生成 catchup 会让播放器显示回看入口却一点就 503。
+            # 回看以 TSTVTimeLife>0 为准 (TimeShift 属性不可靠)
             "timeshift": "1" if (tv.get("tstvlife") or "0").isdigit() and int(tv["tstvlife"]) > 0 else "0",
             "tstvlife": tv.get("tstvlife", ""),
             "shift_raw": a["ts"] if a else "",
@@ -195,7 +189,7 @@ def to_xmltv_date(s):
         return None
 
 
-def build_xmltv(channels, days=3):  # 电信回看实际存储约7天(实测6天前可回看), 由2天扩展
+def build_xmltv(channels, days=3):
     """生成 XMLTV 节目单"""
     out = ['<?xml version="1.0" encoding="UTF-8"?>',
            '<tv generator-info-name="city-iptv-epg">']

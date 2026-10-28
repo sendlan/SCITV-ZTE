@@ -1,21 +1,10 @@
 #!/bin/sh
-# 高频刷新任务: EPG 节目单 + 播放列表 (默认每 6 小时)
-# ------------------------------------------------------------
-# 重要: 本脚本【不】重新抓取频道列表, 也不重新探测。
-# 频道列表+健康标记由 /etc/iptv_auth.sh 每月抓取/探测一次。
-# 这里只复用缓存的 /www/iptv_channels.json 刷新节目单和 m3u,
-# m3u 会按 healthy 标记排除无信号频道, 避免频繁认证把 IPTV 网关风控。
-#
-# 若频道列表还不存在(全新部署), 会自动先完整跑一遍兜底。
+# 每 6 小时刷新节目单与 m3u (复用频道列表, 不重复认证)
 
 LOG=/tmp/iptv_epg.log
 
-if [ ! -f /www/iptv_channels.json ]; then
-    echo "[iptv_refresh] 频道列表缺失, 先抓取一次" >> "$LOG" 2>&1
-    /etc/iptv_auth.sh >> "$LOG" 2>&1
-fi
+[ -f /www/iptv_channels.json ] || /etc/iptv_auth.sh >> "$LOG" 2>&1
 
 python3 /etc/iptv_epg.py epg >> "$LOG" 2>&1
-# 快速回捞: 只复测当前被排除的频道, 一旦恢复信号立刻回到列表 (只转正不降级)
 python3 /etc/iptv_probe.py --only-excluded >> "$LOG" 2>&1
 python3 /etc/gen_m3u_epg.py >> "$LOG" 2>&1

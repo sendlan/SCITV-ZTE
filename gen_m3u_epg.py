@@ -1,12 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# 由 /www/iptv_channels.json 生成可播 m3u (多套格式)
-# ------------------------------------------------------------
-# 输出 (路径见 /etc/iptv.conf 的 CITY_ID):
-#   /www/{城市}.m3u        -> TVBox/DIYP 用, 长格式 {(b)yyyyMMddHHmmss}+08, 走:5140 口
-#   /www/player.m3u        -> 内置 rtp2httpd 播放器用, 短格式 {(b)YmdHMS}, 走 80 口
-# 参数从 /etc/iptv.conf 读取。
-# ------------------------------------------------------------
+# 由 /www/iptv_channels.json 生成 m3u
+#   /www/{CITY_ID}.m3u  TVBox/DIYP, 长格式时间, 走 HTTP_PORT
+#   /www/player.m3u     rtp2httpd 内置播放器, 短格式时间, 走 80
 import json, re
 
 CFG = {}
@@ -87,7 +83,7 @@ def build(channels, time_format, use_proxy=True):
         if not igmp:
             skipped += 1
             continue
-        # 无视频反馈的频道排除 (由 /etc/iptv_probe.py 标记), 白名单除外
+        # 无信号频道排除(白名单除外)
         if (ch.get("healthy") is False
                 and int(ch.get("fail_streak") or 0) >= EXCLUDE_AFTER
                 and not is_keep(name)):
@@ -95,21 +91,15 @@ def build(channels, time_format, use_proxy=True):
             continue
         chid = ch.get("channelid") or ch.get("tvid", "")
         catchup = ""
-        # 仅电信平台已开通时移回看(timeshift=1)的频道生成 catchup。
-        # 优先用 frameset 实时下发的完整 TimeShiftURL(含 AuthInfo 签名, 实测47小时仍有效):
-        #   .sdp -> .mpg, 主机换为 rtp2httpd 转发 (/rtsp/), 用播放器时间填 programbegin/end。
-        # 该签名由 iptv_epg.py 抓取时写入 channels.json 的 timeshiftURL 字段。
+        # 回看: 优先用抓取时下发的完整 TimeShiftURL(含签名)
         if chid and ch.get("timeshift") == "1":
             tsurl = ch.get("timeshiftURL") or ""
             if tsurl:
                 csrc = tsurl.replace(".sdp", ".mpg").replace("rtsp://", "")
-                # frameset 下发 time=...+08 为字面加号, URL 中 + 会被解析成空格,
-                # 需转义为 %2B08 (签名匹配, 实测有效)
                 csrc = csrc.replace("+08", "%2B08")
                 csrc = f"http://{LAN_IP}{port}/rtsp/{csrc}"
                 csrc = f"{csrc}&programbegin={{(b){time_format}}}{tz}&programend={{(e){time_format}}}{tz}"
             else:
-                # 兜底: 无实时签名时用自拼 URL (部分地区无 AuthInfo)
                 csrc = (f"http://{LAN_IP}{port}/rtsp/{TS_SERVER}/live/{chid}.mpg"
                         f"?vcdnid={TS_VENDOR}"
                         f"&programbegin={{(b){time_format}}}{tz}"

@@ -1,47 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# 频道健康探测 (增强版, 防误杀 + 黑名单按月清零)
-# ------------------------------------------------------------
-# 判定逻辑
-# --------
-# 每个频道用【纯组播】经本机 rtp2httpd (127.0.0.1:HTTP_PORT) 拉流,
-# 每轮最多尝试 ATTEMPTS 次, 每次最多观察 PROBE_TIME 秒:
-#
-#   ok      : 单次拿到 >= GOOD_BYTES 字节   -> 健康
-#   partial : 拿到 >0 但不足 GOOD_BYTES     -> 健康 (慢启动/低码率, 不算故障)
-#   dead    : 本轮 ATTEMPTS 次全部 0 字节   -> 本轮判失败
-#
-# 黑名单机制 (重要)
-# ----------------
-#   fail_streak = 本"月度周期"内的连续失败轮数。
-#   * 月度任务用 --reset-streak --passes 2 调用:
-#       先把所有频道的 fail_streak 清零  ->  每月的黑名单从零重算
-#       第 1 轮判 dead 的频道, 间隔 PASS_GAP 秒后再复核 1 轮 (第 2 轮)
-#       两轮都 dead 才让 fail_streak 达到 EXCLUDE_AFTER(=2) 而被排除
-#     => 效果: 月内双轮确认(抗抖动) + 跨月归零(运营商调整后能自己回来)
-#   * --only-excluded 用于每 6 小时的快速回捞:
-#       只复测当前已被排除的频道, 且【只做转正, 不做降级】
-#       -> 被误判的频道不必等一个月, 一旦恢复信号立刻回到列表
-#
-# 相比最初版本的关键改动
-# ----------------------
-#  1) 单次探测 -> 多次重试, 任一次拿到数据即判有信号
-#  2) 判定分三态, "有数据但不足" 不再算故障
-#  3) 引入 fail_streak + EXCLUDE_AFTER, 单次失败不再直接拉黑
-#  4) 新增 --reset-streak / --passes, 实现"月度黑名单清零"
-#  5) 新增 --only-excluded, 实现被排除频道的快速回捞
-#  6) 白名单收敛: 只保留 CCTV1-17 + "卫视" + KEEP_KEYWORDS(默认"卫视")。
-#     CHC 等付费电影频道**不做特例保留** —— 它们起播慢但确实有流,
-#     靠"多次重试 + 三态判定(partial 算健康)"就能自己通过, 无需塞进白名单。
-#  7) 白名单关键词改为 /etc/iptv.conf 的 KEEP_KEYWORDS 可配
-#  8) 新增 --dry-run / --sample / --names-file, 便于小样本复测而不动 channels.json
-#
-# 用法:
-#   python3 /etc/iptv_probe.py --reset-streak --passes 2   # 月度(黑名单清零)
-#   python3 /etc/iptv_probe.py --only-excluded             # 6 小时快速回捞
-#   python3 /etc/iptv_probe.py                             # 单轮全量, 写回
-#   python3 /etc/iptv_probe.py --names-file /tmp/n --dry-run   # 只复测名单, 不写回
-# ------------------------------------------------------------
+# 频道健康探测
+# 每个频道经本机 rtp2httpd 拉流: 有数据(partial 及以上)算健康, 全 0 字节算失败。
+# fail_streak 记录月度周期内连续失败轮数, 达到 EXCLUDE_AFTER 才排除。
+#   --reset-streak --passes 2  月度: 清零后双轮复核, 两轮都失败才排除
+#   --only-excluded            6 小时快速回捞: 只复测已排除频道, 只转正不降级
+#   --dry-run / --sample / --names-file  小样本复测, 不写回
 import argparse, json, os, random, re, socket, sys, time
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor

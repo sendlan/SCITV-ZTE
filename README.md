@@ -42,6 +42,7 @@
 | `iptv_probe.py` | `/etc/iptv_probe.py` | 探测频道组播健康度, 维护 `healthy` / `fail_streak` 与黑名单 |
 | `iptv_refresh.sh` | `/etc/iptv_refresh.sh` | 刷 EPG + 快速回捞被排除频道 + 重建 m3u (每6h) |
 | `iptv_epg.py` | `/etc/iptv_epg.py` | 认证/抓频道/抓节目单的核心逻辑 |
+| `iptv_token.py` | `/etc/iptv_token.py` | 认证签名(AUTHENTICATOR)生成器: EDS 发现 → 取 token → 签名 → 验证 → 写回 conf |
 | `gen_m3u_epg.py` | `/etc/gen_m3u_epg.py` | 从频道列表生成多套 m3u, 按健康标记排除无信号频道 |
 | `25-iptv-route` | `/etc/hotplug.d/iface/25-iptv-route` | IPTV 接口up时加路由 |
 | `crontabs_root` | 参考 `/etc/crontabs/root` | 定时任务样例 |
@@ -89,8 +90,8 @@ opkg install python3 rtp2httpd nginx curl
 把本目录文件传到路由器对应位置并赋权:
 
 ```
-scp -O iptv.conf iptv_auth.sh iptv_refresh.sh iptv_epg.py iptv_probe.py gen_m3u_epg.py 25-iptv-route root@192.168.1.1:/etc/
-ssh root@192.168.1.1 "chmod +x /etc/iptv_auth.sh /etc/iptv_refresh.sh /etc/iptv_epg.py /etc/iptv_probe.py /etc/gen_m3u_epg.py /etc/hotplug.d/iface/25-iptv-route; chmod 640 /etc/iptv.conf"
+scp -O iptv.conf iptv_auth.sh iptv_refresh.sh iptv_epg.py iptv_probe.py iptv_token.py gen_m3u_epg.py 25-iptv-route root@192.168.1.1:/etc/
+ssh root@192.168.1.1 "chmod +x /etc/iptv_auth.sh /etc/iptv_refresh.sh /etc/iptv_epg.py /etc/iptv_probe.py /etc/iptv_token.py /etc/gen_m3u_epg.py /etc/hotplug.d/iface/25-iptv-route; chmod 640 /etc/iptv.conf"
 ```
 
 ### 4. 配置(核心步骤)
@@ -102,11 +103,15 @@ ssh root@192.168.1.1 "chmod +x /etc/iptv_auth.sh /etc/iptv_refresh.sh /etc/iptv_
 | `EPG_HOST` | 内网 EPG 服务器 `IP:端口` | 机顶盒抓包 |
 | `USERID` | 宽带 IPTV 账号 | 运营商给的拨号账号 |
 | `STBID` | 机顶盒序列号 | 机顶盒背面 / 认证抓包 |
-| `AUTHENTICATOR` | 认证密钥(与STBID绑定) | 认证抓包 |
+| `AUTHENTICATOR` | 认证签名(与STBID绑定) | 认证抓包, 或由 `iptv_token.py` 自动生成 |
+| `PASSWORD` | IPTV 账号密码 | 运营商给的拨号密码, 生成签名用 |
+| `EDS_HOST` | EDS 调度服务 `IP:8001` | 抓包; 建议写 IP(域名需内网 DNS) |
 | `FCC_SERVER` | FCC快速换台服务器 `IP:端口` | 频道列表 TimeShift/FCC 字段 |
 | `TS_SERVER` | 回看RTSP服务器 `IP:554` | 频道列表 TimeShiftURL 字段 |
 | `LAN_IP` / `HTTP_PORT` | 对外地址 / rtp2httpd 端口 | 你自己 |
-| `IGMP_NET`/`IGMP_GW` | IPTV 网段/网关 | `ip route` 观察 |
+| `IGMP_NET`/`IGMP_GW` | IPTV 业务网段/网关 | `ip route` 观察 |
+| `TOKEN_NET` | token 服务器网段 | 抓包; 由 25-iptv-route 持久化 |
+| `EDS_NET` | EDS 调度网段 | 抓包; 由 25-iptv-route 持久化 |
 | `CITY_NAME`/`CITY_ID` | 城市名(显示/文件名) | 自己 |
 | `KEEP_KEYWORDS` | (可选)白名单关键词, 逗号分隔, 默认 `卫视` | 见 §六 |
 | `EXCLUDE_AFTER` | (可选)连续失败几轮才排除, 默认 `2` | 见 §六 |
@@ -120,12 +125,14 @@ ssh root@192.168.1.1 "chmod +x /etc/iptv_auth.sh /etc/iptv_refresh.sh /etc/iptv_
 写入 `/etc/crontabs/root` 后重启 cron:
 
 ```
-# 频道列表: 每月 1 号 04:05 抓取一次 (只抓列表, 不探测)
+# 频道列表: 每月 1 号 04:05 (只抓列表, 不探测)
 5 4 1 * * /etc/iptv_auth.sh --no-probe >/dev/null 2>&1
-# 频道健康探测: 每月 1 号 20:17 单独跑 (黄金时段, 全频道都在播, 避免分时段频道误判)
+# 健康探测: 每月 1 号 20:17 (全频道都在播的时段)
 17 20 1 * * /etc/iptv_auth.sh --probe >/dev/null 2>&1
-# 节目单 + 播放列表: 每 6 小时刷新 (复用缓存的频道列表, 不重复抓取)
+# 节目单 + 播放列表: 每 6 小时
 17 */6 * * * /etc/iptv_refresh.sh >/dev/null 2>&1
+# 认证签名: 每 12 小时
+23 */12 * * * /etc/iptv_auth.sh --token >>/tmp/iptv_token.log 2>&1
 ```
 
 ```
@@ -278,6 +285,8 @@ python3 -u /etc/iptv_probe.py --names-file /tmp/names.txt --dry-run
 | 某频道被误杀想做长期豁免 | 把关键词加进 `iptv.conf` 的 `KEEP_KEYWORDS`, 再跑一次 `/etc/iptv_auth.sh --probe` |
 | 换台还是慢 | FCC 是否在 m3u URL 上(看 `?fcc=`); 播放器缓冲策略也影响起播 |
 | 节目单空白 | EPG 网段路由断; 认证频率过高被限流 |
+| token 获取超时, 鉴权"不通" | `TOKEN_NET`/`EDS_NET` 网段路由丢失(重启后未持久化的大坑, 见第九节) |
+| EDS 发现失败 | `EDS_HOST` 不可达: 域名需 IPTV 内网 DNS, 建议直接写 IP; 网段路由断 |
 
 排查日志: `tail -f /tmp/iptv_epg.log`, `logread | grep rtp2httpd`
 
@@ -288,3 +297,22 @@ python3 -u /etc/iptv_probe.py --names-file /tmp/names.txt --dry-run
 - `AUTHENTICATOR` / `STBID` 相当于机顶盒身份, **不要外传**。
 - `chmod 600 /etc/iptv.conf`。
 - 播放器接入仅限局域网, 勿把路由器直接暴露公网。
+
+---
+
+## 九、鉴权链路与 EDS 动态发现
+
+### 机顶盒开机鉴权流程
+
+1. **EDS 调度服务**(配置项 `EDS_HOST`, 建议直接写 `IP:8001`)
+   `GET /esv2UICloudAuthClient/UICloudAuthClient/api/authentication?UserID=..&Action=Login`
+   → 页面里 `CTCGetAuthInfo('xxxx...')` 即 **AccountAuth**(32hex)。
+2. 用 AccountAuth 作为 token 位生成「引导签名」POST 到 `api/authurl`,
+   EDS 返回页里 `document.location` 指向当前 EPG/token 服务器。
+3. 到该服务器 `getencrypttoken.jsp` 取 token → 算正式签名 → `auth.jsp` 换 UserToken。
+
+### iptv_token.py 的实现
+
+- 每次先走 EDS 发现, 与机顶盒行为一致, 不受服务器 IP 漂移影响。
+- EDS 不可达时按 `TOKEN_HOST` → `EPG_HOST` 顺序兜底。
+- `EDS_NET` 与 `TOKEN_NET` 必须经 iptv 口路由, 由 `25-iptv-route` 在接口 up 时持久化。
